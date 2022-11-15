@@ -1,6 +1,5 @@
 import timelineData from "../data/timelineData";
 import { BiCurrentLocation } from "react-icons/bi";
-import {AiOutlineArrowLeft} from "react-icons/ai"
 import { BsFillSkipBackwardFill } from "react-icons/bs";
 import {
   VerticalTimeline,
@@ -19,7 +18,7 @@ export const Timeline = () => {
     <div>
       
         <BsFillSkipBackwardFill
-          className="back-arrow arrow"
+          className="back-arrow"
           onClick={handleBackward}
         />
     
@@ -39,13 +38,14 @@ export const Timeline = () => {
                 className="vertical-timeline-element--work"
                 key={timeline.id}
                 contentArrowStyle={{
-                  borderRight: "7px solid  rgb(0, 0, 0)",
+                  borderRight: "15px solid  rgb(0, 0, 0)"
+                   , alignContent: 'center'
                 }}
-                date={timeline.date_added}
                 dateClassName="date"
-                iconStyle={{ background: "rgb(179, 147, 208)", color: "#fff" }}
-                icon={<BiCurrentLocation />}
+                iconStyle={{ background: "rgb(179, 147, 208)", color: "#fff"}}
+                icon={<BiCurrentLocation /> }
               >
+                <h4>{timeline.date_added}</h4>
                 <h2 className="vertical-timeline-element-title">
                   Location: {timeline.current_location}
                 </h2>
